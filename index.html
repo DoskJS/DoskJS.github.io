@@ -1,0 +1,20 @@
+<html>
+  <head>
+<title>Kinesis - DL</title>
+    <style>html,body{background: linear-gradient(to bottom right, #3E03CA, #0c0b39) !important;}</style>
+<script>
+function dl(){
+var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
+if(isMac){
+window.location.href = "https://kinesisaio.blob.core.windows.net/download/kinesis-mac.dmg";
+}else{
+window.location.href = "https://kinesisaio.blob.core.windows.net/download/kinesis-windows.exe"
+}
+}
+window.onload=dl;
+</script>
+  </head>
+  <body>
+<h1 style="color:white;font-size:75;position: fixed;bottom:25;left:75;"><b>↓</b></h1>
+  </body>
+</html>
